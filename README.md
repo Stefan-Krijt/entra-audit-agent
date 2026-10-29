@@ -25,3 +25,6 @@ This project bridges an Azure OpenAI (Foundry) instance in the Cybersteps tenant
 - `get_global_admins()`: Identifies permanent Global Administrators.
 - `get_users_without_mfa()`: Checks MFA registration status.
 - `get_high_privilege_service_principals()`: Scans App Registrations for `RoleManagement.ReadWrite.Directory`.
+
+## Note on EntraGoat Deployment
+The standard EntraGoat deployment script is designed for Windows environments (WPF GUI). Because this project was developed on a Fedora Linux workstation, the deployment script could not be executed natively. To fulfill the Stage 4 objective, a vulnerable Service Principal (`EntraGoat-Vulnerable-SP`) was manually provisioned in the Pearson tenant. This simulated the exact privilege escalation misconfiguration that EntraGoat would create, allowing the AI agent to successfully detect and analyze the vulnerability.
